@@ -1,0 +1,54 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #0E2127;
+  padding: 10px;
+  color: white;
+}
+
+.app-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+}
+
+.app-nav ul li {
+  display: inline;
+}
+
+.app-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.app-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.app-content {
+  flex: 1;
+  /* padding: 20px; */
+}
+
+.app-footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.map-section {
+  margin: 20px 0;
+}
+
+#geojson-upload {
+  padding: 10px;
+  margin: 10px 0;
+}
+
