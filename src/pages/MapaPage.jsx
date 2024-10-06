@@ -166,6 +166,7 @@ import { GeoJSON, MapContainer, TileLayer } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { GraficaBarra } from "../components/GraficaBarra";
 import 'leaflet/dist/leaflet.css';
+import { GraficaTorta } from "../components/GraficaTorta";
 
 export const MapaPage = () => {
   const [geoJsonData, setGeoJsonData] = useState(null);
@@ -309,6 +310,7 @@ export const MapaPage = () => {
 
       <div className="mt-8">
         <GraficaBarra />
+        <GraficaTorta/>
       </div>
     </div>
   );

@@ -9,17 +9,17 @@ import {
   ResponsiveContainer,
   LabelList,
 } from 'recharts';
-import { DATA_GRAFICA } from '../utils/constantes';
+import { PROBLEMATIC_DATA } from '../utils/constantes';
 import { useState } from 'react';
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
-    const { municipio, cantidad } = payload[0].payload;
+    const { locality, quantity } = payload[0].payload;
     return (
       <div className="custom-tooltip" style={{ backgroundColor: '#fff', padding: '10px', border: '1px solid #ccc', borderRadius: '5px', boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)' }}>
         <p style={{ fontWeight: 'bold', marginBottom: 5 }}>{`Fecha: ${label}`}</p>
-        <p style={{ color: '#FF6347' }}>{`Municipio: ${municipio}`}</p>
-        <p>{`Cantidad: ${cantidad}`}</p>
+        <p style={{ color: '#FF6347' }}>{`Municipio: ${locality}`}</p>
+        <p>{`Cantidad: ${quantity}`}</p>
       </div>
     );
   }
@@ -41,7 +41,7 @@ export const GraficaBarra = () => {
   return (
     <ResponsiveContainer width="100%" height={500}>
       <BarChart
-        data={DATA_GRAFICA}
+        data={PROBLEMATIC_DATA.visual[0].data.problematic}
         margin={{
           top: 20,
           right: 30,
@@ -51,18 +51,18 @@ export const GraficaBarra = () => {
         onMouseLeave={handleMouseLeave}
       >
         <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
-        <XAxis dataKey="fecha" tick={{ fontSize: 14 }} />
-        <YAxis label={{ value: 'Cantidad', angle: -90, position: 'insideLeft', fontSize: 16, fill: '#666' }} />
+        <XAxis dataKey="date" tick={{ fontSize: 14 }} />
+        <YAxis label={{ value: 'quantity', angle: -90, position: 'insideLeft', fontSize: 16, fill: '#666' }} />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 99, 71, 0.2)' }} />
         <Legend verticalAlign="top" height={36} />
         <Bar
-          dataKey="cantidad"
+          dataKey="quantity"
           fill="#FF6347"
           barSize={50}
           radius={[10, 10, 0, 0]}
           onMouseEnter={handleMouseEnter}
         >
-          <LabelList dataKey="cantidad" position="top" fill="#333" fontSize={14} />
+          <LabelList dataKey="quantity" position="top" fill="#333" fontSize={14} />
         </Bar>
         <defs>
           <linearGradient id="colorCantidad" x1="0" y1="0" x2="0" y2="1">

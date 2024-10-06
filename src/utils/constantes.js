@@ -1,17 +1,17 @@
-const DATA_GRAFICA = [
-  { fecha: 'Enero', cantidad: 300, municipio: "Municipio 1" },
-  { fecha: 'Febrero', cantidad: 280, municipio: "Municipio 2" },
-  { fecha: 'Marzo', cantidad: 350, municipio: "Municipio 3" },
-  { fecha: 'Abril', cantidad: 270, municipio: "Municipio 4" },
-  { fecha: 'Mayo', cantidad: 320, locacion: "Municipio 5" },
-  { fecha: 'Junio', cantidad: 400, municipio: "Municipio 6" },
-  { fecha: 'Julio', cantidad: 450, municipio: "Municipio 7" },
-  { fecha: 'Agosto', cantidad: 500, municipio: "Municipio 8" },
-  { fecha: 'Septiembre', cantidad: 460, municipio: "Municipio 9" },
-  { fecha: 'Octubre', cantidad: 400, municipio: "Municipio 10" },
-  { fecha: 'Noviembre', cantidad: 320, municipio: "Municipio 11" },
-  { fecha: 'Diciembre', cantidad: 280, municipio: "Municipio 12" },
-];
+// const DATA_GRAFICA = [
+//   { fecha: 'Enero', cantidad: 300, municipio: "Municipio 1" },
+//   { fecha: 'Febrero', cantidad: 280, municipio: "Municipio 2" },
+//   { fecha: 'Marzo', cantidad: 350, municipio: "Municipio 3" },
+//   { fecha: 'Abril', cantidad: 270, municipio: "Municipio 4" },
+//   { fecha: 'Mayo', cantidad: 320, locacion: "Municipio 5" },
+//   { fecha: 'Junio', cantidad: 400, municipio: "Municipio 6" },
+//   { fecha: 'Julio', cantidad: 450, municipio: "Municipio 7" },
+//   { fecha: 'Agosto', cantidad: 500, municipio: "Municipio 8" },
+//   { fecha: 'Septiembre', cantidad: 460, municipio: "Municipio 9" },
+//   { fecha: 'Octubre', cantidad: 400, municipio: "Municipio 10" },
+//   { fecha: 'Noviembre', cantidad: 320, municipio: "Municipio 11" },
+//   { fecha: 'Diciembre', cantidad: 280, municipio: "Municipio 12" },
+// ];
 
 
 const PROBLEMATIC_DATA = {
@@ -25,11 +25,61 @@ const PROBLEMATIC_DATA = {
         "problematic": [
           {
             "date": "Enero",
-            "quantity": 234.0,
+            "quantity": 542,
             "locality": "Santa Cruz"
           },
           {
-            "date": "Enero",
+            "date": "Febrero",
+            "quantity": 45,
+            "locality": "Cochabamba"
+          },
+          {
+            "date": "Marzo",
+            "quantity": 864,
+            "locality": "La paz"
+          },
+          {
+            "date": "Abril",
+            "quantity": 734,
+            "locality": "Oruro"
+          },
+          {
+            "date": "Mayo",
+            "quantity": 749,
+            "locality": "Sucre"
+          },
+          {
+            "date": "Junio",
+            "quantity": 64,
+            "locality": "Tarija"
+          },
+          {
+            "date": "Julio",
+            "quantity": 237,
+            "locality": "Potosi"
+          },
+          {
+            "date": "Agosto",
+            "quantity": 847,
+            "locality": "Beni"
+          },
+          {
+            "date": "Septiembre",
+            "quantity": 23,
+            "locality": "Pando"
+          },
+          {
+            "date": "Octubre",
+            "quantity": 234.0,
+            "locality": "Potosi"
+          },
+          {
+            "date": "Noviembre",
+            "quantity": 234.0,
+            "locality": "Oruro"
+          },
+          {
+            "date": "Diciembre",
             "quantity": 234.0,
             "locality": "Santa Cruz"
           }
@@ -58,4 +108,4 @@ const PROBLEMATIC_DATA = {
   ]
 }
 
-export { DATA_GRAFICA };
+export { PROBLEMATIC_DATA };
