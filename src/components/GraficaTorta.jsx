@@ -1,25 +1,12 @@
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 import { useState } from 'react';
+import { PROBLEMATIC_DATA } from '../utils/constantes';
 
-// Datos actualizados
-const DATA_GRAFICA = [
-  { mes: 'Enero', cantidad: 300, municipio: "Municipio 1" },
-  { mes: 'Febrero', cantidad: 280, municipio: "Municipio 2" },
-  { mes: 'Marzo', cantidad: 350, municipio: "Municipio 3" },
-  { mes: 'Abril', cantidad: 270, municipio: "Municipio 4" },
-  { mes: 'Mayo', cantidad: 320, municipio: "Municipio 5" },
-  { mes: 'Junio', cantidad: 400, municipio: "Municipio 6" },
-  { mes: 'Julio', cantidad: 450, municipio: "Municipio 7" },
-  { mes: 'Agosto', cantidad: 500, municipio: "Municipio 8" },
-  { mes: 'Septiembre', cantidad: 460, municipio: "Municipio 9" },
-  { mes: 'Octubre', cantidad: 400, municipio: "Municipio 10" },
-  { mes: 'Noviembre', cantidad: 320, municipio: "Municipio 11" },
-  { mes: 'Diciembre', cantidad: 280, municipio: "Municipio 12" },
-];
+const DATA_GRAFICA = PROBLEMATIC_DATA.visual[0].data.problematic;
 // 4330
 export const GraficaTorta = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-
+    console.log(DATA_GRAFICA)
     const onPieEnter = (_, index) => {
       setActiveIndex(index);  
     };
@@ -36,7 +23,7 @@ export const GraficaTorta = () => {
             innerRadius={180}
             outerRadius={250}
             fill="#8884d8"
-            dataKey="cantidad"  // Indicamos que el valor es 'cantidad'
+            dataKey="quantity"  // Indicamos que el valor es 'cantidad'
             onMouseEnter={onPieEnter}
           />
         </PieChart>
@@ -83,9 +70,9 @@ const renderActiveShape = (props) => {
       />
       <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`Cantidad: ${value}`}</text> {/* Mostramos la cantidad */}
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`quantity: ${value}`}</text> {/* Mostramos la cantidad */}
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
-        {`(Municipio: ${payload.municipio})`} {/* Mostramos el municipio */}
+        {`(locality: ${payload.locality})`} {/* Mostramos el municipio */}
       </text>
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={36} textAnchor={textAnchor} fill="#999">
         {`(Rate ${(percent * 100).toFixed(2)}%)`}
